@@ -1,7 +1,7 @@
 # myBlog
 Created as a Django learning experiment.
 
-## Preview - Working on 24/05/2020
+## Preview - Working on 24-05-2020
 ![myBlog - preview gif](https://user-images.githubusercontent.com/52306002/82755801-61dc8880-9dac-11ea-9ef3-0944e7d02054.gif)
 
 ## Instructions
