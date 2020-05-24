@@ -12,8 +12,8 @@ from django.views.generic import (TemplateView, ListView,
 # Create your views here.
 
 
-class AboutView(TemplateView, ListView):
-    template_name = 'about.html'
+class AboutView(TemplateView):
+    template_name = 'blog/about.html'
 
 
 class PostListView(ListView):
@@ -63,7 +63,7 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
 class DraftListView(LoginRequiredMixin, ListView):
     login_url = '/login/'
-    redirect_field_name = 'blog/post_draft_list.html'
+    template_name = 'blog/post_draft_list.html'
     model = Post
 
     def get_queryset(self):

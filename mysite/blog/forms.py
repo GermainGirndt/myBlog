@@ -9,9 +9,9 @@ class PostForm(forms.ModelForm):
 
         # for modifing the forms css classes itself
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'post-title', 'placeholder': 'Title PH'}),
-            'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea post-content',
-                                          'placeholder': 'This is the text placeholder'})
+            'title': forms.TextInput(attrs={'class': 'form-post-title', 'placeholder': 'Enter post title'}),
+            'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea form-post-content',
+                                          'placeholder': 'Enter post text'})
         }
 
 
@@ -22,6 +22,6 @@ class CommentForm(forms.ModelForm):
         fields = ('author', 'text')
 
         widgets = {
-            'author': forms.TextInput(attrs={'class': 'comment-title'}),
-            'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea comment-content'})
+            'author': forms.TextInput(attrs={'class': 'form-comment-title', 'placeholder': 'Enter author name'}),
+            'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea form-comment-content', 'placeholder':'Enter comment'})
         }

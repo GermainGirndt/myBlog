@@ -1,15 +1,39 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h1>Posts:</h1>
+<header class="page-heading ">
+	<h1 class="display-4">MyBlog</h1>
+</header>
 
-{% for post in post_list %}
-<div class="post">
-	<h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
-	<div class="date">
-		<p><strong>Published on:</strong> {{post.published|date:"d-	m-Y"}}</p>
-	</div>
-	<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approve_comments.count }}</a>
-</div>
-{% endfor %}
+<section>
+	{% for post in post_list %}
+	<article class="post-in-list full-height">
+		<header class="post-title">
+			<h2>
+				<a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a>
+			</h2>
+		</header>
+		<section>
+			<div class="post-date">
+				<p><strong>Published on:</strong> {{ post.published_date|date:"d-m-Y" }}</p>
+			</div>
+			<section class="summary">
+				<p>
+					<header class="summary-title">
+						<strong>Summary:</strong>
+					</header>
+					<section class="summary-content">
+							{{ post.text|striptags|linebreaksbr|truncatechars:200 }}
+					</section>
+				</p>
+			</section>
+			<section class="comment-count-container">
+			<a class='comment-count' href="{% url 'post_detail' pk=post.pk %}">
+				Comments: {{ post.approve_comments.count }}				
+			</section>
+			</a>
+		</section>
+	</article>
+	{% endfor %}
+</section>
 {% endblock %}

@@ -11,9 +11,9 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<!-- Medium Style Editor -->
-	<script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+	<script src="{% static 'js/medium-editor.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/medium-editor.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/themes/beagle.css'%}">
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css'%}">
@@ -27,6 +27,7 @@
 <body class="loader full-height">
 
 	<!-- Navbar -->
+
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
 		<div class="container collapse navbar-collapse" id="navbarText">
 			<ul class="navbar navbar-nav ">
@@ -37,10 +38,10 @@
 					<a class="nav-link"href="{% url 'about' %}">About</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="http://www.github.com">GitHub</a>
+					<a class="nav-link" href="http://www.github.com/GermainPereira">GitHub</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="http://www.linkedin.com">LinkedIn</a>
+					<a class="nav-link" href="http://www.linkedin.com/in/GermainPereira">LinkedIn</a>
 				</li>
 			</ul>
 
@@ -76,26 +77,30 @@
 			{% endif %}
 		</div>
 	</nav>
+
 	<!-- Spacing Block-->
 	<div class="spacing-container container">
 	</div>
 
 	<!-- Content Block-->
+<section class="full-height">
 	<div class="content container full-height">
 		<div class="row full-height">
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<div style=" background:transparent !important" class="blog_posts full-height jumbotron container base-container">
-					{% block content %}
-					{% endblock %}
+					<article>
+						{% block content %}
+						{% endblock %}
+					</article>
 				</div>
 			</div>
 		</div>
 	</div>
+</section>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
 </body>
 </html>

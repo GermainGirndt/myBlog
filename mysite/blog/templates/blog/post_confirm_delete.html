@@ -3,7 +3,7 @@
 {% block content %}
 <form method="POST">
 	{% csrf_token %}
-	<p>Are you sure you wnt to delete {{ object }}?</p>
+	<p>Are you sure you want to delete {{ object }}?</p>
 	<input type="submit" class='btn btn-danger' name="" value="Delete">
 </form>
 {% endblock %}
