@@ -4,6 +4,11 @@ Created as a Django learning experiment.
 ## :mag_right: Preview - Working on 24-05-2020
 ![myBlog - preview gif](https://user-images.githubusercontent.com/52306002/82755801-61dc8880-9dac-11ea-9ef3-0944e7d02054.gif)
 
+## Dependency Versions
+- Python: 3.5
+- Django: 1.10
+- ...
+
 ## :heavy_check_mark: Instructions
 
 Run the following commands on your terminal:
